@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void PrimeSelect(int primearr[], int N, int count, int current);
-int isPrime(int c, int i);
+int isPrime(int num, int i);
 
 int main() {
     int n = 0;
