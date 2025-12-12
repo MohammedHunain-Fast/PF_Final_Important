@@ -25,7 +25,7 @@ int main() {
 void PrimeSelect(int primearr[], int N, int count, int current) {
     if(count == N) 
         return;
-    if(isPrime(current, current / 2)) { 
+    if(isPrime(current, 2)) { 
         *(primearr + count) = current;
         PrimeSelect(primearr, N, count + 1, current + 1);
     }
@@ -37,10 +37,12 @@ void PrimeSelect(int primearr[], int N, int count, int current) {
 int isPrime(int num, int i) {
     if(num <= 1) 
         return 0;
-    if(i == 1) 
+    if(num == 2) 
         return 1;
     if(num % i == 0) 
         return 0;
+    if(i >= num/2)
+        return 1;
 
-    return isPrime(num, i - 1);
+    return isPrime(num, i + 1);
 }
